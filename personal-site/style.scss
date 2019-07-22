@@ -1,0 +1,247 @@
+@import url("https://fonts.googleapis.com/css?family=IBM+Plex+Sans:400,700&display=swap");
+
+$darkest: #000000;
+$dark: #4c5454;
+$neut: #FAA916;
+$light: #c4d6b0;
+$lighter: #f5f6f3;
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 10px;
+}
+
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  vertical-align: baseline;
+}
+
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+body {
+  line-height: 1;
+  font-family: "IBM Plex Sans", sans-serif;
+}
+ol,
+ul {
+  list-style: none;
+}
+blockquote,
+q {
+  quotes: none;
+}
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: "";
+  content: none;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+@mixin underline($color) {
+  &:after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    border-radius: 1rem;
+    height: .5rem;
+    background-image: linear-gradient(to bottom, $color, transparent);
+    width: 100%;
+  }
+}
+
+.hero-section {
+  background-image: url(file:///C:/Users/samsm/Desktop/Website%20Development/New%20Personal%20Site/images/hero-compressor.jpg);
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  &:after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: 0;
+    background-color: rgba(0,0,0,.6);
+  }
+}
+
+.logo-cont {
+  height: 8rem;
+  position: relative;
+  width: 8rem;
+  margin: auto;
+  z-index: 1;
+  svg {
+    height: 100%;
+  }
+}
+
+nav ul {
+  display: flex;
+  justify-content: center;
+  position: relative;
+  z-index: 1;
+  text-transform: uppercase;
+  font-weight: 700;
+  a {
+    text-decoration: none;
+    padding: 1rem 2rem;
+    margin: 0 1rem;
+    position: relative;
+    transition: opacity .3s;
+    @include underline($neut);
+    &:hover {
+      opacity: .7;
+    }
+  }
+  li {
+    font-size: 2rem;
+    color: $lighter;
+  }
+}
+
+.bio-container {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin: auto;
+  padding: 10rem 2rem;
+  max-width: 120rem;
+  color: $lighter;
+}
+
+.profile-pic {
+  padding: 2rem;
+  img {
+    width: 15vw;
+    border-radius: .5rem;
+  }
+}
+
+.stats {
+  padding: 2rem;
+  flex: 1;
+  display: flex;
+  ul {
+    font-size: 3rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+  }
+  li {
+    position: relative;
+    padding-bottom: 2rem;
+    margin-bottom: 2rem;
+    background-image: linear-gradient(to bottom, transparent, $dark);
+    @include underline($neut);
+  }
+}
+
+.bio {
+  padding: 2rem;
+}
