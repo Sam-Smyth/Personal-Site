@@ -2,7 +2,7 @@
 
 $darkest: #000000;
 $dark: #4c5454;
-$neut: #FAA916;
+$neut: #faa916;
 $light: #c4d6b0;
 $lighter: #f5f6f3;
 
@@ -138,14 +138,21 @@ table {
   border-spacing: 0;
 }
 
+a {
+  text-decoration: none;
+  &:link, &:active, &:visited, &:hover {
+    color: $lighter;
+  }
+}
+
 @mixin underline($color) {
   &:after {
-    content: '';
+    content: "";
     position: absolute;
     bottom: 0;
     left: 0;
     border-radius: 1rem;
-    height: .5rem;
+    height: 0.5rem;
     background-image: linear-gradient(to bottom, $color, transparent);
     width: 100%;
   }
@@ -156,15 +163,22 @@ table {
   background-size: cover;
   background-position: center;
   position: relative;
+  height: 70rem;
+  @media (max-height: 1200px) and (orientation: landscape) {
+    height: 50rem;
+  }
+  @media (max-height: 900px) and (orientation: landscape) {
+    height: 30rem;
+  }
   &:after {
-    content: '';
+    content: "";
     position: absolute;
     width: 100%;
     height: 100%;
     top: 0;
     left: 0;
     z-index: 0;
-    background-color: rgba(0,0,0,.6);
+    background-color: rgba(0, 0, 0, 0.6);
   }
 }
 
@@ -191,10 +205,10 @@ nav ul {
     padding: 1rem 2rem;
     margin: 0 1rem;
     position: relative;
-    transition: opacity .3s;
+    transition: opacity 0.3s;
     @include underline($neut);
     &:hover {
-      opacity: .7;
+      opacity: 0.7;
     }
   }
   li {
@@ -203,45 +217,136 @@ nav ul {
   }
 }
 
-.bio-container {
+.bio-cont {
+  position: absolute;
+  top: 40rem;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100rem;
+  max-width: 100%;
+  @media (max-height: 1200px) and (orientation: landscape) {
+    top: 30rem;
+  }
+  @media (max-height: 900px) and (orientation: landscape) {
+    top: 20rem;
+  }
+}
+
+.bio-cont-top {
+  position: relative;
+  display: flex;
+  height: 50rem;
+  overflow: hidden;
+  z-index: 1;
+  color: $lighter;
+  margin-bottom: 5rem;
+  div:nth-of-type(2) {
+    width: 20rem;
+    position: absolute;
+    overflow: hidden;
+    background-color: $neut;
+    top: -50%;
+    left: 50%;
+    height: 200%;
+    transform: rotate(-10deg);
+    z-index: 0;
+  }
+  @media (max-height: 900px) and (orientation: landscape) {
+    height: 40rem;
+  }
+}
+
+.bio-info {
+  flex: 0 0 55%;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
   position: relative;
   z-index: 1;
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  margin: auto;
-  padding: 10rem 2rem;
-  max-width: 120rem;
-  color: $lighter;
-}
-
-.profile-pic {
-  padding: 2rem;
-  img {
-    width: 15vw;
-    border-radius: .5rem;
-  }
-}
-
-.stats {
-  padding: 2rem;
-  flex: 1;
-  display: flex;
-  ul {
-    font-size: 3rem;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-  }
-  li {
+  padding: 5.5rem 4rem;
+  background-color: $neut;
+  h1 {
+    font-size: 4rem;
+    padding-bottom: .5rem;
     position: relative;
-    padding-bottom: 2rem;
-    margin-bottom: 2rem;
-    background-image: linear-gradient(to bottom, transparent, $dark);
-    @include underline($neut);
+    text-transform: uppercase;
+    text-shadow: 0 .5px $dark;
+  }
+  h2 {
+    font-size: 2rem;
+    text-shadow: 0 .5px $dark;
+  }
+  ul {
+    padding: 3rem 0;
+  }
+  a {
+    position: relative;
+    &:after {
+      content: '';
+      position: absolute;
+      width: 100%;
+      transform: scaleX(0);
+      height: 2px;
+      bottom: 0;
+      left: 0;
+      background-color: $dark;
+      transform-origin: bottom right;
+      transition: transform 0.25s ease-out;
+    }
+    &:hover:after {
+      transform: scaleX(1);
+      transform-origin: bottom left;
+    }
   }
 }
 
-.bio {
+.bio-img {
+  flex: 1;
+  padding-left: 10rem;
+  img {
+    object-fit: cover;
+    object-position: top;
+    width: 100%;
+    height: 100%;
+  }
+}
+
+.bio-cont-bottom {
+  position: relative;
+  text-align: center;
+  background: $light;
   padding: 2rem;
+  p {
+    padding: 1rem 0;
+    font-size: 1.8rem;
+  }
+  button {
+    outline: none;
+    border: none;
+    border-radius: 1rem;
+    background-color: $neut;
+    padding: 1rem 2rem;
+    text-transform: uppercase;
+    font-size: 1.8rem;
+    margin: 1rem 0;
+    font-weight: 700;
+    transition: transform .3s;
+    cursor: pointer;
+    &:hover {
+      transform: scale(1.1);
+    }
+  }
+}
+
+.portfolio-cont {
+  position: relative;
+  background-image: url(file:///C:/Users/samsm/Desktop/Website%20Development/New%20Personal%20Site/images/Flat-Mountains.svg);
+  background-size: cover;
+  background-position: bottom;
+  height: 1200px;
+  z-index: -1;
+}
+
+::selection {
+  background-color: $light;
 }
