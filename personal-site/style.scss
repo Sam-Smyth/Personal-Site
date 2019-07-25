@@ -529,5 +529,16 @@ nav ul {
 }
 
 @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
- 
+  .bio-info svg {
+    display: none;
+  }
+  
+  .bio-img img {
+    object-fit: none;
+    height: auto;
+    width: 150%;
+    left: -10rem;
+    position: relative;
+    z-index: -1;
+  }
 }
