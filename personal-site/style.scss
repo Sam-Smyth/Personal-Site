@@ -158,6 +158,25 @@ a {
   }
 }
 
+.contact-bar {
+  position: fixed;
+  left: -7.5rem;;
+  top: 25%;
+  background-color: $light;
+  z-index: 2;
+  transform: rotate(-90deg);
+  font-size: 2rem;
+  padding: .5rem 2rem;
+  color: white;
+  font-weight: 700;
+  letter-spacing: 1rem;
+  text-transform: uppercase;
+  transition: opacity .2s;
+  &:hover {
+    opacity: .7;
+  }
+}
+
 .hero-section {
   background-image: url(file:///C:/Users/samsm/Desktop/Website%20Development/New%20Personal%20Site/images/hero-compressor.jpg);
   background-size: cover;
@@ -246,7 +265,7 @@ nav ul {
   z-index: 1;
   color: $lighter;
   margin-bottom: 5rem;
-  box-shadow: 1px 1px 10px grey;
+  box-shadow: 1px 1px 10px $dark;
   div:nth-of-type(2) {
     width: 20rem;
     position: absolute;
@@ -285,10 +304,26 @@ nav ul {
     text-shadow: 0 .5px $dark;
   }
   ul {
-    padding: 3rem 0;
+    padding: 4rem 4rem;
+  }
+  li {
+    font-size: 2rem;
+    padding: 2rem 0;
+    font-weight: 700;
+  }
+  svg {
+    height: 2.5rem;
+    padding-right: .5rem;
+  }
+  p {
+    position: relative;
+    top: -.5rem;
+    display: inline-block;
   }
   a {
     position: relative;
+    padding-bottom: .3rem;
+    transition: opacity .3s;
     &:after {
       content: '';
       position: absolute;
@@ -300,6 +335,9 @@ nav ul {
       background-color: $darkest;
       transform-origin: bottom right;
       transition: transform 0.25s ease-out;
+    }
+    &:hover {
+      opacity: .8;
     }
     &:hover:after {
       transform: scaleX(1);
@@ -324,7 +362,7 @@ nav ul {
   text-align: center;
   background: $light;
   padding: 2rem;
-  box-shadow: 1px 1px 10px grey;
+  box-shadow: 1px 1px 10px $dark;
   p {
     padding: 1rem 0;
     font-size: 1.8rem;
@@ -340,6 +378,7 @@ nav ul {
     padding: 1rem 2rem;
     text-transform: uppercase;
     font-size: 1.8rem;
+    color: $dark;
     margin: 3rem 0 1rem;
     font-weight: 700;
     transition: transform .3s;
@@ -390,7 +429,7 @@ nav ul {
   margin-bottom: 4rem;
   background-color: red;
   z-index: 1;
-  box-shadow: 1px 1px 10px grey;
+  box-shadow: 1px 1px 10px $dark;
   transition: transform .3s;
   &:hover {
     transform: scale(1.02);
@@ -487,4 +526,8 @@ nav ul {
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
   background-color: rgb(108, 201, 139);
+}
+
+@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+ 
 }

@@ -145,6 +145,28 @@ a:link, a:active, a:visited, a:hover {
   color: #FBFBFF;
 }
 
+.contact-bar {
+  position: fixed;
+  left: -7.5rem;
+  top: 25%;
+  background-color: #01BAEF;
+  z-index: 2;
+  -webkit-transform: rotate(-90deg);
+          transform: rotate(-90deg);
+  font-size: 2rem;
+  padding: .5rem 2rem;
+  color: white;
+  font-weight: 700;
+  letter-spacing: 1rem;
+  text-transform: uppercase;
+  -webkit-transition: opacity .2s;
+  transition: opacity .2s;
+}
+
+.contact-bar:hover {
+  opacity: .7;
+}
+
 .hero-section {
   background-image: url(file:///C:/Users/samsm/Desktop/Website%20Development/New%20Personal%20Site/images/hero-compressor.jpg);
   background-size: cover;
@@ -272,8 +294,8 @@ nav ul li {
   z-index: 1;
   color: #FBFBFF;
   margin-bottom: 5rem;
-  -webkit-box-shadow: 1px 1px 10px grey;
-          box-shadow: 1px 1px 10px grey;
+  -webkit-box-shadow: 1px 1px 10px #757575;
+          box-shadow: 1px 1px 10px #757575;
 }
 
 .bio-cont-top div:nth-of-type(2) {
@@ -328,11 +350,31 @@ nav ul li {
 }
 
 .bio-info ul {
-  padding: 3rem 0;
+  padding: 4rem 4rem;
+}
+
+.bio-info li {
+  font-size: 2rem;
+  padding: 2rem 0;
+  font-weight: 700;
+}
+
+.bio-info svg {
+  height: 2.5rem;
+  padding-right: .5rem;
+}
+
+.bio-info p {
+  position: relative;
+  top: -.5rem;
+  display: inline-block;
 }
 
 .bio-info a {
   position: relative;
+  padding-bottom: .3rem;
+  -webkit-transition: opacity .3s;
+  transition: opacity .3s;
 }
 
 .bio-info a:after {
@@ -351,6 +393,10 @@ nav ul li {
   transition: -webkit-transform 0.25s ease-out;
   transition: transform 0.25s ease-out;
   transition: transform 0.25s ease-out, -webkit-transform 0.25s ease-out;
+}
+
+.bio-info a:hover {
+  opacity: .8;
 }
 
 .bio-info a:hover:after {
@@ -381,8 +427,8 @@ nav ul li {
   text-align: center;
   background: #01BAEF;
   padding: 2rem;
-  -webkit-box-shadow: 1px 1px 10px grey;
-          box-shadow: 1px 1px 10px grey;
+  -webkit-box-shadow: 1px 1px 10px #757575;
+          box-shadow: 1px 1px 10px #757575;
 }
 
 .bio-cont-bottom p {
@@ -401,6 +447,7 @@ nav ul li {
   padding: 1rem 2rem;
   text-transform: uppercase;
   font-size: 1.8rem;
+  color: #757575;
   margin: 3rem 0 1rem;
   font-weight: 700;
   -webkit-transition: -webkit-transform .3s;
@@ -481,8 +528,8 @@ nav ul li {
   margin-bottom: 4rem;
   background-color: red;
   z-index: 1;
-  -webkit-box-shadow: 1px 1px 10px grey;
-          box-shadow: 1px 1px 10px grey;
+  -webkit-box-shadow: 1px 1px 10px #757575;
+          box-shadow: 1px 1px 10px #757575;
   -webkit-transition: -webkit-transform .3s;
   transition: -webkit-transform .3s;
   transition: transform .3s;
