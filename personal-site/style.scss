@@ -503,6 +503,13 @@ nav ul {
   transition: background-color .2s;
 }
 
+footer {
+  position: relative;
+  height: 3rem;
+  background-color: $darkest;
+  border-top: 2px solid $light;
+}
+
 ::selection {
   background-color: $light;
 }

@@ -621,6 +621,13 @@ nav ul li {
   transition: background-color .2s;
 }
 
+footer {
+  position: relative;
+  height: 3rem;
+  background-color: #0B4F6C;
+  border-top: 2px solid #01BAEF;
+}
+
 ::-moz-selection {
   background-color: #01BAEF;
 }
