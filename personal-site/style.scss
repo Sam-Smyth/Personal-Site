@@ -1,10 +1,10 @@
 @import url("https://fonts.googleapis.com/css?family=IBM+Plex+Sans:400,700&display=swap");
 
-$darkest: #000000;
-$dark: #4c5454;
-$neut: #faa916;
-$light: #c4d6b0;
-$lighter: #f5f6f3;
+$darkest: #0B4F6C;
+$dark: #757575;
+$neut: #20BF55;
+$light: #01BAEF;
+$lighter: #FBFBFF;
 
 * {
   box-sizing: border-box;
@@ -183,13 +183,17 @@ a {
 }
 
 .logo-cont {
-  height: 8rem;
+  height: 15rem;
   position: relative;
-  width: 8rem;
+  width: 15rem;
   margin: auto;
   z-index: 1;
   svg {
     height: 100%;
+  }
+  @media (max-height: 900px) and (orientation: landscape) {
+    height: 10rem;
+    width: 10rem;
   }
 }
 
@@ -200,6 +204,7 @@ nav ul {
   z-index: 1;
   text-transform: uppercase;
   font-weight: 700;
+  letter-spacing: .2rem;
   a {
     text-decoration: none;
     padding: 1rem 2rem;
@@ -222,8 +227,9 @@ nav ul {
   top: 40rem;
   left: 50%;
   transform: translateX(-50%);
-  width: 100rem;
+  width: 110rem;
   max-width: 100%;
+  z-index: 1;
   @media (max-height: 1200px) and (orientation: landscape) {
     top: 30rem;
   }
@@ -240,6 +246,7 @@ nav ul {
   z-index: 1;
   color: $lighter;
   margin-bottom: 5rem;
+  box-shadow: 1px 1px 10px grey;
   div:nth-of-type(2) {
     width: 20rem;
     position: absolute;
@@ -265,6 +272,7 @@ nav ul {
   z-index: 1;
   padding: 5.5rem 4rem;
   background-color: $neut;
+  letter-spacing: .2rem;
   h1 {
     font-size: 4rem;
     padding-bottom: .5rem;
@@ -289,7 +297,7 @@ nav ul {
       height: 2px;
       bottom: 0;
       left: 0;
-      background-color: $dark;
+      background-color: $darkest;
       transform-origin: bottom right;
       transition: transform 0.25s ease-out;
     }
@@ -316,19 +324,23 @@ nav ul {
   text-align: center;
   background: $light;
   padding: 2rem;
+  box-shadow: 1px 1px 10px grey;
   p {
     padding: 1rem 0;
     font-size: 1.8rem;
+    letter-spacing: 0.2rem;
+    color: $lighter;
   }
   button {
     outline: none;
     border: none;
     border-radius: 1rem;
-    background-color: $neut;
+    letter-spacing: .2rem;
+    background-color: $lighter;
     padding: 1rem 2rem;
     text-transform: uppercase;
     font-size: 1.8rem;
-    margin: 1rem 0;
+    margin: 3rem 0 1rem;
     font-weight: 700;
     transition: transform .3s;
     cursor: pointer;
@@ -340,13 +352,139 @@ nav ul {
 
 .portfolio-cont {
   position: relative;
+  display: flex;
+  justify-content: center;
   background-image: url(file:///C:/Users/samsm/Desktop/Website%20Development/New%20Personal%20Site/images/Flat-Mountains.svg);
   background-size: cover;
   background-position: bottom;
-  height: 1200px;
-  z-index: -1;
+}
+
+.portfolio-items {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100rem;
+  justify-content: space-between;
+  margin: 57rem 2rem 10rem;
+  h2 {
+    flex: 0 0 100%;
+    text-align: center;
+    margin-bottom: 8rem;
+    font-size: 3rem;
+    letter-spacing: .2rem;
+    text-transform: uppercase;
+    text-shadow: 0 0.5px #757575;
+    position: relative;
+    padding: 0 2rem 2rem;
+    color: $neut;
+    @include underline($neut);
+  }
+  @media (max-height: 1200px) and (orientation: landscape) {
+    margin: 65rem 2rem 10rem;
+  }
+}
+
+.portfolio-piece {
+  position: relative;
+  width: 45%;
+  height: 26rem;
+  margin-bottom: 4rem;
+  background-color: red;
+  z-index: 1;
+  box-shadow: 1px 1px 10px grey;
+  transition: transform .3s;
+  &:hover {
+    transform: scale(1.02);
+  }
+  img {
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+  }
+  &:nth-child(2) {
+    .portfolio-overlay {
+      background-color: rgba(0, 143, 180, .5);
+      &:hover {
+        background-color: rgba(0, 143, 180, .9);
+      }
+    }
+    svg {
+      top: 2rem;
+      position: relative;
+      width: 70%;
+    }
+  }
+  &:nth-child(3) {
+    .portfolio-overlay {
+      background-color: rgba(176, 189, 33, 0.5);
+      &:hover {
+        background-color: rgba(176, 189, 33, 0.9);
+      }
+    }
+    svg {
+      width: 90%;
+      top: -2rem;
+      position: relative;
+    }
+  }
+  &:nth-child(4) {
+    .portfolio-overlay {
+      background-color: rgba(31, 5, 54, .5);
+      &:hover {
+        background-color: rgba(31, 5, 54, .9);
+      }
+    }
+    svg {
+      width: 70%;
+    }
+  }
+  &:nth-child(5) {
+    .portfolio-overlay {
+      background-color: rgba(227, 25, 55, .5);
+      &:hover {
+        background-color: rgba(227, 25, 55, .9);
+      }
+    }
+    svg {
+      top: 3rem;
+      position: relative;
+      width: 100%;
+    }
+  }
+}
+
+.portfolio-overlay {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+  transition: background-color .2s;
 }
 
 ::selection {
   background-color: $light;
+}
+
+/* scrollwidth */
+::-webkit-scrollbar {
+  width: 1rem;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background-color: $darkest;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background-color: $neut;
+  border-radius: .5rem;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background-color: rgb(108, 201, 139);
 }

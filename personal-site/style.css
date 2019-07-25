@@ -142,7 +142,7 @@ a {
 }
 
 a:link, a:active, a:visited, a:hover {
-  color: #f5f6f3;
+  color: #FBFBFF;
 }
 
 .hero-section {
@@ -177,15 +177,22 @@ a:link, a:active, a:visited, a:hover {
 }
 
 .logo-cont {
-  height: 8rem;
+  height: 15rem;
   position: relative;
-  width: 8rem;
+  width: 15rem;
   margin: auto;
   z-index: 1;
 }
 
 .logo-cont svg {
   height: 100%;
+}
+
+@media (max-height: 900px) and (orientation: landscape) {
+  .logo-cont {
+    height: 10rem;
+    width: 10rem;
+  }
 }
 
 nav ul {
@@ -199,6 +206,7 @@ nav ul {
   z-index: 1;
   text-transform: uppercase;
   font-weight: 700;
+  letter-spacing: .2rem;
 }
 
 nav ul a {
@@ -217,8 +225,8 @@ nav ul a:after {
   left: 0;
   border-radius: 1rem;
   height: 0.5rem;
-  background-image: -webkit-gradient(linear, left top, left bottom, from(#faa916), to(transparent));
-  background-image: linear-gradient(to bottom, #faa916, transparent);
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#20BF55), to(transparent));
+  background-image: linear-gradient(to bottom, #20BF55, transparent);
   width: 100%;
 }
 
@@ -228,7 +236,7 @@ nav ul a:hover {
 
 nav ul li {
   font-size: 2rem;
-  color: #f5f6f3;
+  color: #FBFBFF;
 }
 
 .bio-cont {
@@ -237,8 +245,9 @@ nav ul li {
   left: 50%;
   -webkit-transform: translateX(-50%);
           transform: translateX(-50%);
-  width: 100rem;
+  width: 110rem;
   max-width: 100%;
+  z-index: 1;
 }
 
 @media (max-height: 1200px) and (orientation: landscape) {
@@ -261,15 +270,17 @@ nav ul li {
   height: 50rem;
   overflow: hidden;
   z-index: 1;
-  color: #f5f6f3;
+  color: #FBFBFF;
   margin-bottom: 5rem;
+  -webkit-box-shadow: 1px 1px 10px grey;
+          box-shadow: 1px 1px 10px grey;
 }
 
 .bio-cont-top div:nth-of-type(2) {
   width: 20rem;
   position: absolute;
   overflow: hidden;
-  background-color: #faa916;
+  background-color: #20BF55;
   top: -50%;
   left: 50%;
   height: 200%;
@@ -299,7 +310,8 @@ nav ul li {
   position: relative;
   z-index: 1;
   padding: 5.5rem 4rem;
-  background-color: #faa916;
+  background-color: #20BF55;
+  letter-spacing: .2rem;
 }
 
 .bio-info h1 {
@@ -307,12 +319,12 @@ nav ul li {
   padding-bottom: .5rem;
   position: relative;
   text-transform: uppercase;
-  text-shadow: 0 0.5px #4c5454;
+  text-shadow: 0 0.5px #757575;
 }
 
 .bio-info h2 {
   font-size: 2rem;
-  text-shadow: 0 0.5px #4c5454;
+  text-shadow: 0 0.5px #757575;
 }
 
 .bio-info ul {
@@ -332,7 +344,7 @@ nav ul li {
   height: 2px;
   bottom: 0;
   left: 0;
-  background-color: #4c5454;
+  background-color: #0B4F6C;
   -webkit-transform-origin: bottom right;
           transform-origin: bottom right;
   -webkit-transition: -webkit-transform 0.25s ease-out;
@@ -367,24 +379,29 @@ nav ul li {
 .bio-cont-bottom {
   position: relative;
   text-align: center;
-  background: #c4d6b0;
+  background: #01BAEF;
   padding: 2rem;
+  -webkit-box-shadow: 1px 1px 10px grey;
+          box-shadow: 1px 1px 10px grey;
 }
 
 .bio-cont-bottom p {
   padding: 1rem 0;
   font-size: 1.8rem;
+  letter-spacing: 0.2rem;
+  color: #FBFBFF;
 }
 
 .bio-cont-bottom button {
   outline: none;
   border: none;
   border-radius: 1rem;
-  background-color: #faa916;
+  letter-spacing: .2rem;
+  background-color: #FBFBFF;
   padding: 1rem 2rem;
   text-transform: uppercase;
   font-size: 1.8rem;
-  margin: 1rem 0;
+  margin: 3rem 0 1rem;
   font-weight: 700;
   -webkit-transition: -webkit-transform .3s;
   transition: -webkit-transform .3s;
@@ -400,18 +417,189 @@ nav ul li {
 
 .portfolio-cont {
   position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   background-image: url(file:///C:/Users/samsm/Desktop/Website%20Development/New%20Personal%20Site/images/Flat-Mountains.svg);
   background-size: cover;
   background-position: bottom;
-  height: 1200px;
-  z-index: -1;
+}
+
+.portfolio-items {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  width: 100rem;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  margin: 57rem 2rem 10rem;
+}
+
+.portfolio-items h2 {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 100%;
+          flex: 0 0 100%;
+  text-align: center;
+  margin-bottom: 8rem;
+  font-size: 3rem;
+  letter-spacing: .2rem;
+  text-transform: uppercase;
+  text-shadow: 0 0.5px #757575;
+  position: relative;
+  padding: 0 2rem 2rem;
+  color: #20BF55;
+}
+
+.portfolio-items h2:after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  border-radius: 1rem;
+  height: 0.5rem;
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#20BF55), to(transparent));
+  background-image: linear-gradient(to bottom, #20BF55, transparent);
+  width: 100%;
+}
+
+@media (max-height: 1200px) and (orientation: landscape) {
+  .portfolio-items {
+    margin: 65rem 2rem 10rem;
+  }
+}
+
+.portfolio-piece {
+  position: relative;
+  width: 45%;
+  height: 26rem;
+  margin-bottom: 4rem;
+  background-color: red;
+  z-index: 1;
+  -webkit-box-shadow: 1px 1px 10px grey;
+          box-shadow: 1px 1px 10px grey;
+  -webkit-transition: -webkit-transform .3s;
+  transition: -webkit-transform .3s;
+  transition: transform .3s;
+  transition: transform .3s, -webkit-transform .3s;
+}
+
+.portfolio-piece:hover {
+  -webkit-transform: scale(1.02);
+          transform: scale(1.02);
+}
+
+.portfolio-piece img {
+  -o-object-fit: cover;
+     object-fit: cover;
+  width: 100%;
+  height: 100%;
+}
+
+.portfolio-piece:nth-child(2) .portfolio-overlay {
+  background-color: rgba(0, 143, 180, 0.5);
+}
+
+.portfolio-piece:nth-child(2) .portfolio-overlay:hover {
+  background-color: rgba(0, 143, 180, 0.9);
+}
+
+.portfolio-piece:nth-child(2) svg {
+  top: 2rem;
+  position: relative;
+  width: 70%;
+}
+
+.portfolio-piece:nth-child(3) .portfolio-overlay {
+  background-color: rgba(176, 189, 33, 0.5);
+}
+
+.portfolio-piece:nth-child(3) .portfolio-overlay:hover {
+  background-color: rgba(176, 189, 33, 0.9);
+}
+
+.portfolio-piece:nth-child(3) svg {
+  width: 90%;
+  top: -2rem;
+  position: relative;
+}
+
+.portfolio-piece:nth-child(4) .portfolio-overlay {
+  background-color: rgba(31, 5, 54, 0.5);
+}
+
+.portfolio-piece:nth-child(4) .portfolio-overlay:hover {
+  background-color: rgba(31, 5, 54, 0.9);
+}
+
+.portfolio-piece:nth-child(4) svg {
+  width: 70%;
+}
+
+.portfolio-piece:nth-child(5) .portfolio-overlay {
+  background-color: rgba(227, 25, 55, 0.5);
+}
+
+.portfolio-piece:nth-child(5) .portfolio-overlay:hover {
+  background-color: rgba(227, 25, 55, 0.9);
+}
+
+.portfolio-piece:nth-child(5) svg {
+  top: 3rem;
+  position: relative;
+  width: 100%;
+}
+
+.portfolio-overlay {
+  position: absolute;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+  -webkit-transition: background-color .2s;
+  transition: background-color .2s;
 }
 
 ::-moz-selection {
-  background-color: #c4d6b0;
+  background-color: #01BAEF;
 }
 
 ::selection {
-  background-color: #c4d6b0;
+  background-color: #01BAEF;
+}
+
+/* scrollwidth */
+::-webkit-scrollbar {
+  width: 1rem;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background-color: #0B4F6C;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background-color: #20BF55;
+  border-radius: .5rem;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background-color: #6cc98b;
 }
 /*# sourceMappingURL=style.css.map */
