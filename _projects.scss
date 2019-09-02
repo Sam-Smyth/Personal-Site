@@ -66,7 +66,7 @@
     margin-bottom: 0;
   }
   &:after {
-    content: '';
+    content: "";
     position: absolute;
     top: 0;
     left: 0;
@@ -74,7 +74,7 @@
     height: 100%;
     width: 100%;
     background-color: rgba(11, 79, 108, 0.5);
-    transition: background-color .3s;
+    transition: background-color 0.3s;
     @media (max-width: 768px) {
       background-color: rgba(11, 79, 108, 0.8);
     }
@@ -92,9 +92,18 @@
     }
     .port-content--img {
       opacity: 1;
-      transition: opacity .3s;
+      transition: opacity 0.3s;
     }
   }
+}
+
+.port-content--icon {
+  position: absolute;
+  top: 2rem;
+  left: 2rem;
+  height: 5rem;
+  width: 5rem;
+  z-index: 1;
 }
 
 .port-content--img {
@@ -104,8 +113,8 @@
   position: absolute;
   top: 0;
   left: 0;
-  opacity: .3;
-  transition: opacity .3s;
+  opacity: 0.3;
+  transition: opacity 0.3s;
 }
 
 .port-content--heading-cont {

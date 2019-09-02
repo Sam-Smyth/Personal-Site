@@ -905,7 +905,7 @@ footer {
 }
 
 .port-content--item:after {
-  content: '';
+  content: "";
   position: absolute;
   top: 0;
   left: 0;
@@ -913,8 +913,8 @@ footer {
   height: 100%;
   width: 100%;
   background-color: rgba(11, 79, 108, 0.5);
-  -webkit-transition: background-color .3s;
-  transition: background-color .3s;
+  -webkit-transition: background-color 0.3s;
+  transition: background-color 0.3s;
 }
 
 @media (max-width: 768px) {
@@ -940,8 +940,17 @@ footer {
 
 .port-content--item:hover .port-content--img {
   opacity: 1;
-  -webkit-transition: opacity .3s;
-  transition: opacity .3s;
+  -webkit-transition: opacity 0.3s;
+  transition: opacity 0.3s;
+}
+
+.port-content--icon {
+  position: absolute;
+  top: 2rem;
+  left: 2rem;
+  height: 5rem;
+  width: 5rem;
+  z-index: 1;
 }
 
 .port-content--img {
@@ -952,9 +961,9 @@ footer {
   position: absolute;
   top: 0;
   left: 0;
-  opacity: .3;
-  -webkit-transition: opacity .3s;
-  transition: opacity .3s;
+  opacity: 0.3;
+  -webkit-transition: opacity 0.3s;
+  transition: opacity 0.3s;
 }
 
 .port-content--heading-cont {
