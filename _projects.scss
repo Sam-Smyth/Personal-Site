@@ -1,0 +1,154 @@
+.projects--hero {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.hero-section--text {
+  text-align: center;
+  position: relative;
+  z-index: 1;
+  color: $lighter;
+  padding: 1rem;
+  h1 {
+    font-size: 6rem;
+    margin-bottom: 2rem;
+    padding-bottom: 1.5rem;
+    position: relative;
+    @include underline($neut);
+    @media (max-width: 730px) {
+      font-size: 3rem;
+    }
+  }
+  h3 {
+    font-size: 3rem;
+    @media (max-width: 730px) {
+      font-size: 2rem;
+    }
+  }
+}
+
+.port-content {
+  display: flex;
+  justify-content: center;
+  background-image: url(images/Flat-Mountains.svg);
+  background-size: cover;
+  background-position: bottom;
+}
+
+.port-content--container {
+  display: flex;
+  justify-content: space-between;
+  max-width: 110rem;
+  width: 100%;
+  flex-wrap: wrap;
+  margin: 5rem;
+  @media (max-width: 1200px) {
+    margin: 2rem;
+  }
+}
+
+.port-content--item {
+  flex: 0 0 48%;
+  height: 30rem;
+  margin-bottom: 3rem;
+  border-radius: 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+  @media (max-width: 760px) {
+    flex: 0 0 100%;
+  }
+  &:nth-child(6),
+  &:nth-child(5) {
+    margin-bottom: 0;
+  }
+  &:after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    border-radius: 15px;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(11, 79, 108, 0.5);
+    transition: background-color .3s;
+    @media (max-width: 768px) {
+      background-color: rgba(11, 79, 108, 0.8);
+    }
+  }
+  &:hover {
+    &:after {
+      background-color: rgba(11, 79, 108, 0.8);
+    }
+    h2:after {
+      transform: scaleX(1);
+    }
+    p {
+      max-height: 100px;
+      transition: max-height 0.5s;
+    }
+    .port-content--img {
+      opacity: 1;
+      transition: opacity .3s;
+    }
+  }
+}
+
+.port-content--img {
+  object-fit: cover;
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: .3;
+  transition: opacity .3s;
+}
+
+.port-content--heading-cont {
+  max-width: 70%;
+  width: 100%;
+  text-align: center;
+  position: relative;
+  z-index: 1;
+  h2 {
+    font-weight: bold;
+    font-size: 4rem;
+    position: relative;
+    padding: 2rem 0;
+    @media (max-width: 600px) {
+      font-size: 3rem;
+    }
+    &:after {
+      content: "";
+      height: 2px;
+      background-color: $lighter;
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      transition: all 0.25s;
+      width: 100%;
+      transform: scaleX(0);
+      transform-origin: centre;
+      @media (max-width: 768px) {
+        transform: scaleX(1);
+      }
+    }
+  }
+  p {
+    font-size: 1.6rem;
+    padding-top: 2rem;
+    line-height: 2rem;
+    position: relative;
+    overflow: hidden;
+    transition: max-height 0.5s;
+    max-height: 0;
+    @media (max-width: 768px) {
+      max-height: 100px;
+      transition: max-height 0.5s;
+    }
+  }
+}
