@@ -900,7 +900,7 @@ footer {
   }
 }
 
-.port-content--item:nth-child(6), .port-content--item:nth-child(5) {
+.port-content--item:last-child {
   margin-bottom: 0;
 }
 

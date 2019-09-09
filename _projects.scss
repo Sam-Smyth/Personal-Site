@@ -61,8 +61,7 @@
   @media (max-width: 760px) {
     flex: 0 0 100%;
   }
-  &:nth-child(6),
-  &:nth-child(5) {
+  &:last-child {
     margin-bottom: 0;
   }
   &:after {
