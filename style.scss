@@ -12,6 +12,7 @@ $lighter: #FBFBFF;
 
 html {
   font-size: 10px;
+  position: relative;
 }
 
 html,
@@ -117,6 +118,7 @@ section {
 body {
   line-height: 1;
   font-family: "IBM Plex Sans", sans-serif;
+  height: 100%;
 }
 ol,
 ul {
@@ -185,13 +187,7 @@ a {
   background-size: cover;
   background-position: center;
   position: relative;
-  height: 40rem;
-  @media (max-height: 1200px) and (orientation: landscape) {
-    height: 30rem;
-  }
-  @media (max-height: 900px) and (orientation: landscape) {
-    height: 20rem;
-  }
+  height: 100%;
   &:after {
     content: "";
     position: absolute;
@@ -202,8 +198,8 @@ a {
     z-index: 0;
     background-color: rgba(0, 0, 0, 0.6);
   }
-  @media (max-width: 730px) {
-    height: auto;
+  @media (min-height: 983px) {
+    height: 100vh;
   }
 }
 
@@ -255,19 +251,14 @@ nav ul {
 }
 
 .bio-cont {
-  position: absolute;
-  top: 12rem;
-  left: 50%;
-  transform: translateX(-50%);
+  position: relative;
   width: 110rem;
   max-width: 100%;
   z-index: 1;
-  @media (max-height: 900px) and (orientation: landscape) {
-    top: 10rem;
-  }
-  @media (max-width: 730px) {
-    position: relative;
-    top: 0;
+  margin: auto;
+  padding: 10rem 0;
+  @media (max-width: 1100px) {
+    padding: 0;
   }
 }
 
@@ -293,9 +284,6 @@ nav ul {
     @media (max-width: 900px) {
       display: none;
     }
-  }
-  @media (max-height: 900px) and (orientation: landscape) {
-    height: 40rem;
   }
   @media (max-width: 1100px) {
     margin-bottom: 0;
@@ -338,9 +326,6 @@ nav ul {
     font-size: 2rem;
     padding: 2rem 0;
     font-weight: 700;
-    @media (max-height: 900px) and (orientation: landscape) {
-      padding: 1rem 0;
-    }
     @media (max-width: 730px) {
       &:last-child {
         padding-bottom: 0;
@@ -440,132 +425,11 @@ nav ul {
   }
 }
 
-.portfolio-cont {
-  position: relative;
-  display: flex;
-  justify-content: center;
-  background-image: url(images/Flat-Mountains.svg);
-  background-size: cover;
-  background-position: bottom;
-}
-
-.portfolio-items {
-  display: flex;
-  flex-wrap: wrap;
-  width: 100rem;
-  justify-content: space-between;
-  margin: 57rem 2rem 10rem;
-  h2 {
-    flex: 0 0 100%;
-    text-align: center;
-    margin-bottom: 8rem;
-    font-size: 3rem;
-    letter-spacing: .2rem;
-    text-transform: uppercase;
-    text-shadow: 0 0.5px #757575;
-    position: relative;
-    padding: 0 2rem 2rem;
-    color: $neut;
-    @include underline($neut);
-    @media (max-width: 730px) {
-      margin-bottom: 4rem;
-    }
-  }
-  @media (max-height: 1200px) and (orientation: landscape) {
-    margin: 65rem 2rem 10rem;
-  }
-  @media (max-width: 730px) {
-    margin: 3rem 2rem;
-  }
-}
-
-.portfolio-piece {
-  position: relative;
-  width: 45%;
-  height: 26rem;
-  margin-bottom: 4rem;
-  background-color: red;
-  z-index: 1;
-  box-shadow: 1px 1px 10px $dark;
-  transition: transform .3s;
-  &:hover {
-    transform: scale(1.02);
-  }
-  img {
-    object-fit: cover;
-    width: 100%;
-    height: 100%;
-  }
-  &:nth-child(2) {
-    .portfolio-overlay {
-      background-color: rgba(0, 143, 180, .5);
-      &:hover {
-        background-color: rgba(0, 143, 180, .9);
-      }
-    }
-    svg {
-      top: 2rem;
-      position: relative;
-      width: 70%;
-    }
-  }
-  &:nth-child(3) {
-    .portfolio-overlay {
-      background-color: rgba(176, 189, 33, 0.5);
-      &:hover {
-        background-color: rgba(176, 189, 33, 0.9);
-      }
-    }
-    svg {
-      width: 90%;
-      top: -2rem;
-      position: relative;
-    }
-  }
-  &:nth-child(4) {
-    .portfolio-overlay {
-      background-color: rgba(31, 5, 54, .5);
-      &:hover {
-        background-color: rgba(31, 5, 54, .9);
-      }
-    }
-    svg {
-      width: 70%;
-    }
-  }
-  &:nth-child(5) {
-    .portfolio-overlay {
-      background-color: rgba(227, 25, 55, .5);
-      &:hover {
-        background-color: rgba(227, 25, 55, .9);
-      }
-    }
-    svg {
-      top: 3rem;
-      position: relative;
-      width: 100%;
-    }
-  }
-  @media (max-width: 730px) {
-    width: 100%;
-  }
-}
-
-.portfolio-overlay {
-  position: absolute;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100%;
-  width: 100%;
-  top: 0;
-  left: 0;
-  transition: background-color .2s;
-}
-
 footer {
-  position: relative;
+  position: absolute;
+  bottom: 0;
   height: 3rem;
+  width: 100%;
   background-color: $darkest;
   border-top: 2px solid $light;
 }
@@ -609,5 +473,3 @@ footer {
     z-index: -1;
   }
 }
-
-@import "_projects";
